@@ -1,49 +1,40 @@
 import React, { useState } from 'react';
 
 const ballColors = [
-    'rgba(255, 255, 255, 0.9)', // Cricket white ball
-    'rgba(255, 255, 255, 0.9)', // Cricket white ball
-    'rgba(255, 255, 255, 0.9)', // Cricket white ball
-    'rgba(255, 255, 255, 0.9)', // Cricket white ball
-    'rgba(255, 255, 255, 0.9)', // Cricket white ball
-    'rgba(255, 255, 255, 0.9)', // Cricket white ball
+    'rgba(255, 255, 255, 0.9)', // White ball
+    'rgba(255, 255, 255, 0.9)', // White ball
+    'rgba(255, 255, 255, 0.9)', // White ball
+    'rgba(255, 255, 255, 0.9)', // White ball
+    'rgba(255, 255, 255, 0.9)', // White ball
+    'rgba(255, 255, 255, 0.9)', // White ball
 ];
 
-function Balls({ numberOfBalls, content = [], onBallClick, animateActive = false }) {
-    const [currentBall, setCurrentBall] = useState(0);
+function Balls({ numberOfBalls, content = [], onBallClick }) {
+    const [currentBall, setCurrentBall] = useState(-1);
 
     const handleBallClick = (index) => {
         if (onBallClick) {
-            onBallClick(content[index], index); // Pass content and index to the callback
+            onBallClick(content[index], index); 
+            // Pass content and index to the callback
         }
         setCurrentBall(index); // Update the active ball
     };
 
     return (
-        <main className="h-full w-full grid grid-cols-3 place-items-center gap-4 p-5 rounded-lg">
+        <main className="h-full w-full grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 place-items-center gap-2 gap-y-3 p-3 rounded-lg">
             {Array.from({ length: numberOfBalls }).map((_, index) => (
                 <div
                     key={index}
                     onClick={() => handleBallClick(index)} // Add click handler
-                    className={`h-16 w-16 rounded-full shadow-lg transition-transform transform cursor-pointer 
-                        ${animateActive && index === currentBall ? 'animate-bounce' : ''}`}
-                    style={{
-                        
-                        background: `radial-gradient(circle, ${ballColors[index]} 0%, rgba(200, 255, 200, 0.5) 70%)`,
-                        border: '2px solid rgba(255, 255, 255, 0.8)',
-                    }}
+                    className={`size-14 md:size-16 rounded-full shadow-lg transition-transform transform cursor-pointer 
+                    border-[1px] border-custom-white hovershadow active:scale-110`} 
+                    // Optional style for the active ball
+                    
                 >
-                    {/* Optional Content */}
-                    <span className="flex h-full w-full items-center justify-center text-custom-brown font-bold text-lg">
+                    {/* Ball Content */}
+                    <span className="flex h-full w-full items-center justify-center text-custom-gold font-bold text-lg">
                         {content[index] || ''}
                     </span>
-
-                    {/* Ping Animation for the active ball */}
-                    {animateActive && index === currentBall && (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="h-3 w-3 bg-green-600 rounded-full animate-ping"></div>
-                        </div>
-                    )}
                 </div>
             ))}
         </main>

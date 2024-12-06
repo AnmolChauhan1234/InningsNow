@@ -31,16 +31,16 @@ const Scorecard = () => {
 
   return (
     <div
-      className="p-4 max-w-screen-lg mx-auto"
-      style={{ backgroundColor: "#E6F0DC", color: "#9A6735" }}
+      className="p-4 max-w-screen-lg mx-auto bg-custom-black-50"
+      style={{ color: "#9A6735" }}
     >
       <h2 className="text-xl font-bold mb-4">{data.team} Innings</h2>
       <p className="mb-4">{data.innings}</p>
 
       {/* Batting Table */}
       <table className="table-auto w-full border-collapse">
-        <thead>
-          <tr>
+        <thead className="text-custom-white">
+          <tr >
             <th className="text-left p-2 font-medium">Batter</th>
             <th className="text-left p-2 font-medium">Dismissal</th>
             <th className="text-right p-2 font-medium">R</th>
@@ -50,10 +50,10 @@ const Scorecard = () => {
             <th className="text-right p-2 font-medium">SR</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="text-custom-white">
           {data.batters.map((batter, index) => (
             <tr key={index} className="border-b border-gray-300">
-              <td className="p-2 text-black">{batter.name}</td>
+              <td className="p-2">{batter.name}</td>
               <td className="p-2">{batter.dismissal}</td>
               <td className="p-2 text-right">{batter.runs}</td>
               <td className="p-2 text-right">{batter.balls}</td>

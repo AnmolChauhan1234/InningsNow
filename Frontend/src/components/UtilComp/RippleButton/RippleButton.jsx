@@ -14,7 +14,7 @@ function RippleButton({onButtonClick}) {
   return (
     <div className="flex h-full items-center justify-center">
       <button
-        className="relative overflow-hidden w-full rounded-lg bg-gradient-to-r from-emerald-400 to-green-600 px-12 py-5 text-lg font-semibold text-white transition-all duration-300 ease-in-out"
+        className="btn relative overflow-hidden w-full rounded-lg bg-gradient-to-r from-emerald-400 to-green-600 px-12 py-5 text-lg font-semibold text-white transition-all duration-300 ease-in-out"
         onMouseMove={handleMouseOver}
         style={{
           "--xpos": `${ripplePosition.x}px`,

@@ -101,3 +101,23 @@
   .mark{
     border: 1px solid black;
   }
+  .mark-white{
+    border: 1px solid white;
+  }
+
+  .shadow-white-glow{
+    box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.6);
+  }
+  .hovershadow:hover{
+    box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.6);
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
