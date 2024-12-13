@@ -1,9 +1,14 @@
-import {Registration} from './components'
+import MatchDetailsForm from './components/MatchDetails/MatchDetailsForm';
+import Scorecard from './components/Score/ScoreCard/Scorecard';
+import TeamComponent from './components/SelectTeams/SelectTeams';
 
 function App() {
   return (
     <>
-      <Registration />
+      {/* <Registration /> */}
+      {/* <MatchDetailsForm/> */}
+      {/* <TeamComponent/> */}
+      <Scorecard/>
       
     </>
   )

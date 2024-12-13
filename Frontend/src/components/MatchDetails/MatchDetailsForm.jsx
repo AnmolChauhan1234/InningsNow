@@ -27,149 +27,170 @@ const MatchDetailsForm = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-8 bg-white shadow-2xl rounded-xl space-y-6">
-      <h2 className="text-3xl font-semibold text-center text-gray-700 mb-6">
+    <div className="max-w-4xl mx-auto p-8 bg-[#101010] shadow-2xl rounded-xl">
+      <h2 className="text-3xl font-semibold text-center text-[#D1D5DB] mb-6">
         Enter Match Details
       </h2>
-      <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Toss */}
-        <div className="flex items-center space-x-4">
-          <i className="fas fa-trophy text-yellow-500 text-2xl flex-shrink-0"></i>
-          <div className="w-full">
-            <label className="block text-lg font-medium text-gray-600 mb-2">Toss Winner</label>
-            <input
-              type="text"
-              name="toss"
-              value={formData.toss}
-              onChange={handleChange}
-              className="w-full border-2 border-gray-300 rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
-              placeholder="Enter the winning team"
-            />
+      <form onSubmit={handleSubmit}>
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Toss Winner */}
+          <div>
+            <label className="block text-lg font-medium text-[#D1D5DB] mb-2">
+              Toss Winner
+            </label>
+            <div className="relative">
+              <i className="fas fa-trophy absolute left-3 top-4 text-[#FDBA74]"></i>
+              <input
+                type="text"
+                name="toss"
+                value={formData.toss}
+                onChange={handleChange}
+                className="w-full pl-10 border-2 border-[#D1D5DB] rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-[#FDBA74] text-[#D1D5DB] bg-[#101010]"
+                placeholder="Enter the winning team"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Venue */}
-        <div className="flex items-center space-x-4">
-          <i className="fas fa-map-marker-alt text-red-500 text-2xl flex-shrink-0"></i>
-          <div className="w-full">
-            <label className="block text-lg font-medium text-gray-600 mb-2">Venue</label>
-            <input
-              type="text"
-              name="venue"
-              value={formData.venue}
-              onChange={handleChange}
-              className="w-full border-2 border-gray-300 rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
-              placeholder="Enter the venue"
-            />
+          {/* Venue */}
+          <div>
+            <label className="block text-lg font-medium text-[#D1D5DB] mb-2">
+              Venue
+            </label>
+            <div className="relative">
+              <i className="fas fa-map-marker-alt absolute left-3 top-4 text-[#FDBA74]"></i>
+              <input
+                type="text"
+                name="venue"
+                value={formData.venue}
+                onChange={handleChange}
+                className="w-full pl-10 border-2 border-[#D1D5DB] rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-[#FDBA74] text-[#D1D5DB] bg-[#101010]"
+                placeholder="Enter the venue"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Match Format */}
-        <div className="flex items-center space-x-4">
-          <i className="fas fa-play-circle text-green-500 text-2xl flex-shrink-0"></i>
-          <div className="w-full">
-            <label className="block text-lg font-medium text-gray-600 mb-2">Match Format</label>
-            <select
-              name="matchFormat"
-              value={formData.matchFormat}
-              onChange={handleChange}
-              className="w-full border-2 border-gray-300 rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
-            >
-              <option value="T20">T20</option>
-              <option value="ODI">ODI</option>
-              <option value="Test">Test</option>
-            </select>
+          {/* Match Format */}
+          <div>
+            <label className="block text-lg font-medium text-[#D1D5DB] mb-2">
+              Match Format
+            </label>
+            <div className="relative">
+              <i className="fas fa-list absolute left-3 top-4 text-[#FDBA74]"></i>
+              <select
+                name="matchFormat"
+                value={formData.matchFormat}
+                onChange={handleChange}
+                className="w-full pl-10 border-2 border-[#D1D5DB] rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-[#FDBA74] text-[#D1D5DB] bg-[#101010]"
+              >
+                <option value="T20">T20</option>
+                <option value="ODI">ODI</option>
+                <option value="Test">Test</option>
+              </select>
+            </div>
           </div>
-        </div>
 
-        {/* Overs */}
-        <div className="flex items-center space-x-4">
-          <i className="fas fa-hourglass-half text-orange-500 text-2xl flex-shrink-0"></i>
-          <div className="w-full">
-            <label className="block text-lg font-medium text-gray-600 mb-2">Overs</label>
-            <input
-              type="number"
-              name="overs"
-              value={formData.overs}
-              onChange={handleChange}
-              className="w-full border-2 border-gray-300 rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
-              min={1}
-              max={50}
-            />
+          {/* Overs */}
+          <div>
+            <label className="block text-lg font-medium text-[#D1D5DB] mb-2">
+              Overs
+            </label>
+            <div className="relative">
+              <i className="fas fa-clock absolute left-3 top-4 text-[#FDBA74]"></i>
+              <input
+                type="number"
+                name="overs"
+                value={formData.overs}
+                onChange={handleChange}
+                className="w-full pl-10 border-2 border-[#D1D5DB] rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-[#FDBA74] text-[#D1D5DB] bg-[#101010]"
+                min={1}
+                max={50}
+              />
+            </div>
           </div>
-        </div>
 
-        {/* City */}
-        <div className="flex items-center space-x-4">
-          <i className="fas fa-city text-blue-500 text-2xl flex-shrink-0"></i>
-          <div className="w-full">
-            <label className="block text-lg font-medium text-gray-600 mb-2">City</label>
-            <input
-              type="text"
-              name="city"
-              value={formData.city}
-              onChange={handleChange}
-              className="w-full border-2 border-gray-300 rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
-              placeholder="Enter the city"
-            />
+          {/* City */}
+          <div>
+            <label className="block text-lg font-medium text-[#D1D5DB] mb-2">
+              City
+            </label>
+            <div className="relative">
+              <i className="fas fa-city absolute left-3 top-4 text-[#FDBA74]"></i>
+              <input
+                type="text"
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
+                className="w-full pl-10 border-2 border-[#D1D5DB] rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-[#FDBA74] text-[#D1D5DB] bg-[#101010]"
+                placeholder="Enter the city"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Date */}
-        <div className="flex items-center space-x-4">
-          <i className="fas fa-calendar-alt text-purple-500 text-2xl flex-shrink-0"></i>
-          <div className="w-full">
-            <label className="block text-lg font-medium text-gray-600 mb-2">Date</label>
-            <input
-              type="date"
-              name="date"
-              value={formData.date}
-              onChange={handleChange}
-              className="w-full border-2 border-gray-300 rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
-            />
+          {/* Date */}
+          <div>
+            <label className="block text-lg font-medium text-[#D1D5DB] mb-2">
+              Date
+            </label>
+            <div className="relative">
+              <i className="fas fa-calendar-alt absolute left-3 top-4 text-[#FDBA74]"></i>
+              <input
+                type="date"
+                name="date"
+                value={formData.date}
+                onChange={handleChange}
+                className="w-full pl-10 border-2 border-[#D1D5DB] rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-[#FDBA74] text-[#D1D5DB] bg-[#101010]"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Time */}
-        <div className="flex items-center space-x-4">
-          <i className="fas fa-clock text-teal-500 text-2xl flex-shrink-0"></i>
-          <div className="w-full">
-            <label className="block text-lg font-medium text-gray-600 mb-2">Time</label>
-            <input
-              type="time"
-              name="time"
-              value={formData.time}
-              onChange={handleChange}
-              className="w-full border-2 border-gray-300 rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
-            />
+          {/* Time */}
+          <div>
+            <label className="block text-lg font-medium text-[#D1D5DB] mb-2">
+              Time
+            </label>
+            <div className="relative">
+              <i className="fas fa-clock absolute left-3 top-4 text-[#FDBA74]"></i>
+              <input
+                type="time"
+                name="time"
+                value={formData.time}
+                onChange={handleChange}
+                className="w-full pl-10 border-2 border-[#D1D5DB] rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-[#FDBA74] text-[#D1D5DB] bg-[#101010]"
+              />
+            </div>
           </div>
         </div>
 
         {/* Pitch Type */}
-        <div className="flex items-center space-x-4">
-          <i className="fas fa-golf-ball text-yellow-500 text-2xl flex-shrink-0"></i>
-          <div className="w-full">
-            <label className="block text-lg font-medium text-gray-600 mb-2">Pitch Type</label>
-            <select
-              name="pitchType"
-              value={formData.pitchType}
-              onChange={handleChange}
-              className="w-full border-2 border-gray-300 rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-base"
-            >
-              <option value="Normal">Normal</option>
+        <div>
+            <label className="block text-lg font-medium text-[#D1D5DB] mb-2">
+              Match Format
+            </label>
+            <div className="relative">
+              <i className="fas fa-list absolute left-3 top-4 text-[#FDBA74]"></i>
+              <select
+                name="matchFormat"
+                value={formData.matchFormat}
+                onChange={handleChange}
+                className="w-full pl-10 border-2 border-[#D1D5DB] rounded-lg p-4 shadow-md focus:outline-none focus:ring-2 focus:ring-[#FDBA74] text-[#D1D5DB] bg-[#101010]"
+              >
+               <option value="Normal">Normal</option>
               <option value="Green">Green</option>
               <option value="Dusty">Dusty</option>
-            </select>
+              </select>
+            </div>
           </div>
-        </div>
 
         {/* Ball Type */}
-        <div className="flex items-center space-x-4">
-          <i className="fas fa-baseball-ball text-red-500 text-2xl flex-shrink-0"></i>
-          <div className="w-full">
-            <label className="block text-lg font-medium text-gray-600 mb-2">Ball Type</label>
-            <div className="flex space-x-6">
-              <label className="flex items-center">
+        <div className="mt-6">
+          <label className="block text-lg font-medium text-[#D1D5DB] mb-2">
+            Ball Type
+          </label>
+          <div className="relative">
+            <i className="fas fa-baseball-ball absolute left-3 top-4 text-[#FDBA74]"></i>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 pl-10">
+              <label className="flex items-center text-[#D1D5DB]">
                 <input
                   type="radio"
                   name="ballType"
@@ -180,7 +201,7 @@ const MatchDetailsForm = () => {
                 />
                 White
               </label>
-              <label className="flex items-center">
+              <label className="flex items-center text-[#D1D5DB]">
                 <input
                   type="radio"
                   name="ballType"
@@ -196,10 +217,12 @@ const MatchDetailsForm = () => {
         </div>
 
         {/* Submit Button */}
-        <div>
+        <div className="mt-8">
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white p-4 rounded-lg hover:bg-blue-700 flex justify-center items-center space-x-2 text-lg"
+           
+
+            className="w-full bg-[#FDBA74] text-[#18181b] p-4 rounded-lg hover:bg-[#D1D5DB] hover:text-[#101010] flex justify-center items-center space-x-2 text-lg"
           >
             <i className="fas fa-paper-plane"></i>
             <span>Submit Match Details</span>
@@ -211,3 +234,4 @@ const MatchDetailsForm = () => {
 };
 
 export default MatchDetailsForm;
+

@@ -37,18 +37,18 @@ const TeamComponent = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6">
+    <div className="min-h-screen bg-[#101010] flex flex-col items-center p-6">
       {/* Teams container */}
       <div className="flex flex-col md:flex-row w-full md:space-x-6 space-y-6 md:space-y-0">
         {/* Team 1 Box */}
-        <div className="bg-white p-6 shadow-lg rounded-lg flex-1 space-y-6">
-          <h2 className="text-xl font-semibold text-center">Team 1</h2>
+        <div className="bg-[#18181b] p-6 shadow-lg rounded-lg flex-1 space-y-6">
+          <h2 className="text-xl font-semibold text-center text-[#D1D5DB]">Team 1</h2>
           <input
             type="text"
             placeholder="Enter Team A Name"
             value={team1Name}
             onChange={(e) => setTeam1Name(e.target.value.trimStart())}
-            className="w-full p-3 text-lg border rounded-lg focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 text-lg border-2 border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#FDBA74] text-[#D1D5DB] bg-[#101010]"
           />
           <div className="flex space-x-3">
             <input
@@ -56,19 +56,19 @@ const TeamComponent = () => {
               placeholder="Player Name"
               value={team1PlayerInput}
               onChange={(e) => setTeam1PlayerInput(e.target.value)}
-              className="flex-1 p-3 text-lg border rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="flex-1 p-3 text-lg border-2 border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#FDBA74] text-[#D1D5DB] bg-[#101010]"
             />
             <button
               onClick={() => addPlayer(1)}
-              className="px-5 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 text-base"
+              className="px-5 py-3 bg-[#FDBA74] text-[#18181b] rounded-lg hover:bg-[#D1D5DB] hover:text-[#101010] text-base"
             >
               Add
             </button>
           </div>
-          <div className="p-4 border rounded-lg min-h-[350px]">
-            <h3 className="text-lg font-medium mb-3">Players:</h3>
+          <div className="p-4 border-2 border-[#D1D5DB] rounded-lg min-h-[350px] bg-[#101010]">
+            <h3 className="text-lg font-medium mb-3 text-[#D1D5DB]">Players:</h3>
             {team1Players.map((player, index) => (
-              <div key={index} className="text-lg mb-2">
+              <div key={index} className="text-lg mb-2 text-[#D1D5DB]">
                 {index + 1}. {player}
               </div>
             ))}
@@ -76,14 +76,14 @@ const TeamComponent = () => {
         </div>
 
         {/* Team 2 Box */}
-        <div className="bg-white p-6 shadow-lg rounded-lg flex-1 space-y-6">
-          <h2 className="text-xl font-semibold text-center">Team 2</h2>
+        <div className="bg-[#18181b] p-6 shadow-lg rounded-lg flex-1 space-y-6">
+          <h2 className="text-xl font-semibold text-center text-[#D1D5DB]">Team 2</h2>
           <input
             type="text"
             placeholder="Enter Team B Name"
             value={team2Name}
             onChange={(e) => setTeam2Name(e.target.value.trimStart())}
-            className="w-full p-3 text-lg border rounded-lg focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 text-lg border-2 border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#FDBA74] text-[#D1D5DB] bg-[#101010]"
           />
           <div className="flex space-x-3">
             <input
@@ -91,19 +91,19 @@ const TeamComponent = () => {
               placeholder="Player Name"
               value={team2PlayerInput}
               onChange={(e) => setTeam2PlayerInput(e.target.value)}
-              className="flex-1 p-3 text-lg border rounded-lg focus:ring-2 focus:ring-blue-500"
+              className="flex-1 p-3 text-lg border-2 border-[#D1D5DB] rounded-lg focus:ring-2 focus:ring-[#FDBA74] text-[#D1D5DB] bg-[#101010]"
             />
             <button
               onClick={() => addPlayer(2)}
-              className="px-5 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 text-base"
+              className="px-5 py-3 bg-[#FDBA74] text-[#18181b] rounded-lg hover:bg-[#D1D5DB] hover:text-[#101010] text-base"
             >
               Add
             </button>
           </div>
-          <div className="p-4 border rounded-lg min-h-[350px]">
-            <h3 className="text-lg font-medium mb-3">Players:</h3>
+          <div className="p-4 border-2 border-[#D1D5DB] rounded-lg min-h-[350px] bg-[#101010]">
+            <h3 className="text-lg font-medium mb-3 text-[#D1D5DB]">Players:</h3>
             {team2Players.map((player, index) => (
-              <div key={index} className="text-lg mb-2">
+              <div key={index} className="text-lg mb-2 text-[#D1D5DB]">
                 {index + 1}. {player}
               </div>
             ))}
@@ -123,7 +123,7 @@ const TeamComponent = () => {
             team2Players.length === 11 &&
             team1Name.trim() !== "" &&
             team2Name.trim() !== ""
-              ? "bg-green-500 text-white hover:bg-green-600"
+              ? "bg-[#FDBA74] text-[#18181b] hover:bg-[#D1D5DB] hover:text-[#101010]"
               : "bg-gray-300 text-gray-500 cursor-not-allowed"
           }`}
           disabled={
@@ -133,7 +133,7 @@ const TeamComponent = () => {
             team2Name.trim() === ""
           }
         >
-          Next
+          Start Match
         </button>
       </div>
     </div>
