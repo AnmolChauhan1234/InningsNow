@@ -1,14 +1,10 @@
-import MatchDetailsForm from './components/MatchDetails/MatchDetailsForm';
-import Scorecard from './components/Score/ScoreCard/Scorecard';
-import TeamComponent from './components/SelectTeams/SelectTeams';
+import {Registration, Score} from './components'
+import ScrollComponent from './components/UtilComp/ScrollComponent';
 
 function App() {
   return (
     <>
-      {/* <Registration /> */}
-      {/* <MatchDetailsForm/> */}
-      {/* <TeamComponent/> */}
-      <Scorecard/>
+      <Registration />
       
     </>
   )

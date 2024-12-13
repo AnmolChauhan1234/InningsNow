@@ -16,7 +16,7 @@ function LiveScore() {
     const bowler = { name: "Bowler 1", overs: 3, runs: 30, wickets: 1 };
 
     return (
-        <div className="w-full h-full box-border p-4 bg-[#F5F5DC] cursor-pointer">
+        <div className="w-full h-max box-border p-4 bg-[#F5F5DC] cursor-pointer">
 
             {/* top seciton of major display starts here */}
             <div className="flex flex-col justify-between w-full">

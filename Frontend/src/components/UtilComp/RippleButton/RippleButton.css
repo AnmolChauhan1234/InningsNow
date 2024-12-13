@@ -1,4 +1,4 @@
-button::before {
+.btn::before {
     content: "";
     position: absolute;
     top: var(--ypos, 0);
@@ -7,12 +7,14 @@ button::before {
     height: 0;
     width: 0;
     background: #9A6735;
+    /* background-color:#D1D5DB ; */
     border-radius: 50%;
     transition: height 0.4s ease, width 0.4s ease;
   }
   
-  button:hover::before {
+  .btn:hover::before {
     height: 400px;
     width: 100%; /* Ensure the ripple effect covers the full width of the button */
   }
   
+  /* #101010,#18181b,#FDBA74,#D1D5DB */
