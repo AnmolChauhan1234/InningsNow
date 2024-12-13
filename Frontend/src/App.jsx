@@ -4,8 +4,7 @@ import ScrollComponent from './components/UtilComp/ScrollComponent';
 function App() {
   return (
     <>
-      <Registration />
-      
+      <Score />
     </>
   )
 }
